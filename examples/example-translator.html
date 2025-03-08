@@ -24,12 +24,13 @@ $(document).ready(() => {
   i2i.loadDict('../lib/ipa-to-inglish.txt');
   $('#js-ipa-submit').click(() => {
     // text to IPA
-    let out = cf.convert($('#ipa-in').val());
-    $('#ipa-out').val(out.text);
-    $('#ipa-err').html('<p>'+out.error+'</p>')
+    let in_text = $('#ipa-in').val();
+    let ipa_out = cf.convert(in_text);
+    $('#ipa-out').val(ipa_out.text);
+    $('#ipa-err').html('<p>'+ipa_out.error+'</p>')
     // IPA to Inglish
-    out = i2i.convert(out.text);
-    $('#inglish-out').val(out);
+    ing_out = i2i.convert(ipa_out.text);
+    $('#inglish-out').val(ing_out);
   });
 });
 </script>
@@ -52,11 +53,11 @@ $(document).ready(() => {
 <div id="js-text-to-ipa-form">
   <ul style="list-style-type: none;">
     <!-- ipa-in is the designated ID to determine where text will be input from -->
-    <li>English:<br><textarea id="ipa-in" placeholder="Write text here" rows="4" cols="50"></textarea></i>
+    <li>English:<br><textarea id="ipa-in" placeholder="Write text here" rows="4" cols="50">Hello friend! How are you today?</textarea></i>
     <li class="button"><button type="button" id="js-ipa-submit">Convert</button></li>
     <!-- ipa-out is the designated ID to determine where the converted text will be output to -->
     <li>IPA:<br><textarea readonly="readonly" id="ipa-out" placeholder="aʊtpʊt gəʊz hɪə" rows="4" cols="50"></textarea></li>
-    <li>iňglıš:<br><textarea readonly="readonly" id="inglish-out" placeholder="" rows="4" cols="50"></textarea></li>
+    <li>İňglıš:<br><textarea readonly="readonly" id="inglish-out" placeholder="" rows="4" cols="50"></textarea></li>
   </ul>
 
   <ul style="list-style-type: none;">
