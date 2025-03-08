@@ -4,43 +4,43 @@
   <title>Text to IPA Generator</title>
 <!-- Load in the scripts first -->
 <script src="https://code.jquery.com/jquery-3.7.1.js"
-				integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-				crossorigin="anonymous"></script>
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 <script src="../lib/text-to-ipa.js"></script>
 <script src="../lib/converter-form.js"></script>
 <script src="../lib/ipa-to-inglish.js"></script>
 <!-- Load dictionary on window load, you may want to change this according to your needs.
-		 To demonstrate this program, it's just done on window load though.
-		 NOTE: This program implies that the CMU IPA dictionary (http://people.umass.edu/nconstan/CMU-IPA/)
-		 has been loaded with loadDict(). This dictionary is by default included with this
-		 program under the name 'ipadict.txt'. This _WILL NOT WORK_ with any other IPA dictionary.
+     To demonstrate this program, it's just done on window load though.
+     NOTE: This program implies that the CMU IPA dictionary (http://people.umass.edu/nconstan/CMU-IPA/)
+     has been loaded with loadDict(). This dictionary is by default included with this
+     program under the name 'ipadict.txt'. This _WILL NOT WORK_ with any other IPA dictionary.
 -->
 <script>
 $(document).ready(() => {
-	let tti = new TextToIPA();
-	let cf = new ConverterForm(tti);
-	tti.loadDict('../lib/ipadict.txt');
-	let i2i = new IPAToInglish();
-	i2i.loadDict('../lib/ipa-to-inglish.txt');
-	$('#js-ipa-submit').click(() => {
-		// text to IPA
-		let out = cf.convert($('#ipa-in').val());
-		$('#ipa-out').val(out.text);
-		$('#ipa-err').html('<p>'+out.error+'</p>')
-		// IPA to Inglish
-		out = i2i.convert(out.text);
-		$('#inglish-out').val(out);
-	});
+  let tti = new TextToIPA();
+  let cf = new ConverterForm(tti);
+  tti.loadDict('../lib/ipadict.txt');
+  let i2i = new IPAToInglish();
+  i2i.loadDict('../lib/ipa-to-inglish.txt');
+  $('#js-ipa-submit').click(() => {
+    // text to IPA
+    let out = cf.convert($('#ipa-in').val());
+    $('#ipa-out').val(out.text);
+    $('#ipa-err').html('<p>'+out.error+'</p>')
+    // IPA to Inglish
+    out = i2i.convert(out.text);
+    $('#inglish-out').val(out);
+  });
 });
 </script>
 <style>
-	body {
-			font-family: sans-serif;
-	}
-	textarea {
-			font-family: sans-serif;
-			font-size: smaller;
-	}
+  body {
+      font-family: sans-serif;
+  }
+  textarea {
+      font-family: sans-serif;
+      font-size: smaller;
+  }
 </style>
 </head>
 <body>
@@ -56,7 +56,7 @@ $(document).ready(() => {
     <li class="button"><button type="button" id="js-ipa-submit">Convert</button></li>
     <!-- ipa-out is the designated ID to determine where the converted text will be output to -->
     <li>IPA:<br><textarea readonly="readonly" id="ipa-out" placeholder="aʊtpʊt gəʊz hɪə" rows="4" cols="50"></textarea></li>
-		<li>iňglıš:<br><textarea readonly="readonly" id="inglish-out" placeholder="" rows="4" cols="50"></textarea></li>
+    <li>iňglıš:<br><textarea readonly="readonly" id="inglish-out" placeholder="" rows="4" cols="50"></textarea></li>
   </ul>
 
   <ul style="list-style-type: none;">
