@@ -33,6 +33,15 @@ $(document).ready(() => {
 	});
 });
 </script>
+<style>
+	body {
+			font-family: sans-serif;
+	}
+	textarea {
+			font-family: sans-serif;
+			font-size: smaller;
+	}
+</style>
 </head>
 <body>
 <p>Use the following text areas to convert english to it's IPA and İňglıš equivalents.</p>
@@ -54,9 +63,7 @@ $(document).ready(() => {
     <li><noscript><p>This converter will not work unless Javascript is enabled.</p></noscript></li>
     <li>
       <!-- ipa-err is the designated ID to determine where any errors with the translation will go -->
-      <div id="ipa-err">
-        <p>Errors will go here if you make any. (This will be overwritten)</p>
-      </div>
+      <div id="ipa-err"></div>
     </li>
   </ul>
 </div>
