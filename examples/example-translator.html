@@ -2,8 +2,6 @@
 <head>
   <meta charset="utf-8">
   <title>Text to IPA Generator</title>
-</head>
-<body>
 <!-- Load in the scripts first -->
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 				integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -20,34 +18,32 @@
 <script>
 $(document).ready(() => {
 	let tti = new TextToIPA();
-	let cf = new ConverterForm('#ipa-in', '#ipa-out', '#ipa-err', tti);
+	let cf = new ConverterForm(tti);
 	tti.loadDict('../lib/ipadict.txt');
-	let i2i = new IPAToInglish('#ipa-out',  '#inglish-out');
+	let i2i = new IPAToInglish();
 	i2i.loadDict('../lib/ipa-to-inglish.txt');
 	$('#js-ipa-submit').click(() => {
-		cf.convert();
-		i2i.convert();
+		// text to IPA
+		let out = cf.convert($('#ipa-in').val());
+		$('#ipa-out').val(out.text);
+		$('#ipa-err').html('<p>'+out.error+'</p>')
+		// IPA to Inglish
+		out = i2i.convert(out.text);
+		$('#inglish-out').val(out);
 	});
 });
 </script>
-
-<p>Use the following text areas to convert english to it's IPA equivalent.</p>
+</head>
+<body>
+<p>Use the following text areas to convert english to it's IPA and İňglıš equivalents.</p>
 <p>This is NOT case sensitive and punctuation is ignored.</p>
-<br />
-<p>Note: If you are using chrome and this is being ran locally, the dictionary will not load due to the way Chrome handles XHTTP Requests. It does handle them normally on proper websites. Check out a live example <a href="http://surrsur.us/projects/ipa/english-to-ipa.html">here</a></p>
 <br>
   
 <!-- Create a form div -->
 <div id="js-text-to-ipa-form">
   <ul style="list-style-type: none;">
     <!-- ipa-in is the designated ID to determine where text will be input from -->
-    <li>English:<br><textarea id="ipa-in" placeholder="Write text here" rows="4" cols="50"></textarea></li>
-      
-    <!-- This submit button runs the conversion on the input text
-				 As you can see, when this buton is pressed, the conver() function is ran
-				 where the input, output, and error IDs are given as parameters.
-				 These can be set to whatever you like, as long as inID and outID are text areas, and errID is a div.
-    -->
+    <li>English:<br><textarea id="ipa-in" placeholder="Write text here" rows="4" cols="50"></textarea></i>
     <li class="button"><button type="button" id="js-ipa-submit">Convert</button></li>
     <!-- ipa-out is the designated ID to determine where the converted text will be output to -->
     <li>IPA:<br><textarea readonly="readonly" id="ipa-out" placeholder="aʊtpʊt gəʊz hɪə" rows="4" cols="50"></textarea></li>
