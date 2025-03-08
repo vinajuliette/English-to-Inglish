@@ -20,6 +20,7 @@ n	n	N
 ŋ	ň	Ň
 l	l	L
 ɹ	r	R
+ɚ ěr Ěr
 ɾ	ṙ	Ṙ
 r	ř	Ř
 w	w	W
