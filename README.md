@@ -15,13 +15,16 @@ This comes with the core dictionary lookup and example frontend. This project as
 İňglıš does not use accent/stress markers like IPA does, so the ipa-to-inglish code removes those, and subsequently removes duplicates from the conversion which differ only in stress markers. Because İňglıš itself is in development, the lack of stress markers may change.
 
 ### Examples:
-English: Hello friend! How are you today?
-IPA: (hʌlowˈ/hɛlowˈ) fɹɛˈnd! hawˈ (ɑˈɹ/ɚ) juˈ (tʌdejˈ/tudejˈ)?
-İňglıš: (hǒlow/helow) frend! häw (ȧr/ěr) yu (tǒdėy/tudėy)?
 
-English: The history of all hitherto existing society is the history of class struggles.
-IPA: (ðʌ/ðʌˈ/ði) (hɪˈstɚi/hɪˈstɹi) (ʌˈv/ʌv) ɔˈl hɪˈðɚˌtuˈ ɪgzɪˈstɪŋ sʌsajˈʌti (ɪˈz/ɪz) (ðʌ/ðʌˈ/ði) (hɪˈstɚi/hɪˈstɹi) (ʌˈv/ʌv) klæˈs stɹʌˈgʌlz.
-İňglıš: (đǒ/đi) (hıstěri/hıstri) ǒv ȯl hıđěrtu ıgzıstıň sǒsäyǒti ız (đǒ/đi) (hıstěri/hıstri) ǒv klās strǒgǒlz.
+Example 1:
+* English: Hello friend! How are you today?
+* IPA: (hʌlowˈ/hɛlowˈ) fɹɛˈnd! hawˈ (ɑˈɹ/ɚ) juˈ (tʌdejˈ/tudejˈ)?
+* İňglıš: (hǒlow/helow) frend! häw (ȧr/ěr) yu (tǒdėy/tudėy)?
+
+Example 2:
+* English: The history of all hitherto existing society is the history of class struggles.
+* IPA: (ðʌ/ðʌˈ/ði) (hɪˈstɚi/hɪˈstɹi) (ʌˈv/ʌv) ɔˈl hɪˈðɚˌtuˈ ɪgzɪˈstɪŋ sʌsajˈʌti (ɪˈz/ɪz) (ðʌ/ðʌˈ/ði) (hɪˈstɚi/hɪˈstɹi) (ʌˈv/ʌv) klæˈs stɹʌˈgʌlz.
+* İňglıš: (đǒ/đi) (hıstěri/hıstri) ǒv ȯl hıđěrtu ıgzıstıň sǒsäyǒti ız (đǒ/đi) (hıstěri/hıstri) ǒv klās strǒgǒlz.
 
 ### Additional:
 
@@ -43,6 +46,11 @@ This was kind of a pain to get working, as most of the time was found looking fo
 
 This code is released under the GNU GENERAL PUBLIC LICENSE. All works in this repository are meant to be utilized under this license. You are entitled to remix, remodify, and redistribute this program as you see fit, under the condition that all derivative works must use the GPL Version 3.
 
+## See Also
+
+[IPA Chart](https://www.ipachart.com/)
+
 ## Acknowledgements
 
 [CMU IPA Dictionary](http://people.umass.edu/nconstan/CMU-IPA/)
+
